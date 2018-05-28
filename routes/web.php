@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ProjectsController@index');
+Route::get('/contact', 'ContactController@processContact');
+Route::get('/project/{project}', 'ProjectController@show');
