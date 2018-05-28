@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', 'ProjectsController@index');
+Route::get('/', 'ProjectController@index');
 Route::get('/contact', 'ContactController@processContact');
 Route::get('/project/{project}', 'ProjectController@show');
