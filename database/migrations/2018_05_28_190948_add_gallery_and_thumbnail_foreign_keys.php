@@ -13,8 +13,8 @@ class AddGalleryAndThumbnailForeignKeys extends Migration
      */
     public function up()
     {
-        Schema::table('projects', function (Blueprint $table) {
-            $table->foreign('thumbnail_image_id')->references('id')->on('thumbnail_images');
+        Schema::table('thumbnail_images', function (Blueprint $table) {
+            $table->foreign('project_id')->references('id')->on('projects');
         });
 
         Schema::table('gallery_images', function (Blueprint $table) {

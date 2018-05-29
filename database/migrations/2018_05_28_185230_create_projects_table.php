@@ -17,7 +17,6 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->text('heading');
             $table->text('body');
-            $table->unsignedInteger('thumbnail_image_id');
             $table->timestamps();
         });
     }
