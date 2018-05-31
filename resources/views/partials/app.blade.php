@@ -19,8 +19,10 @@
 </head>
 
 <body>
-    @include("partials.header")
-    @yield("content")
-
+    <div class="container">
+        @include("partials.header")
+        @yield("content")
+        @include("partials.footer")
+    <div>
 </body>
 </html>

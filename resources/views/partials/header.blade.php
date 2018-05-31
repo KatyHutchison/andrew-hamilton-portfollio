@@ -1,4 +1,4 @@
-<header class="container">
+<header>
     <div class="row nav-top">
         <div class="col-md-5">
             <h1>ANDREW HAMILTON</h1>
