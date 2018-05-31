@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Andrew Hamilton</title>
+    <title>Andrew Hamilton Design</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300" rel="stylesheet">
