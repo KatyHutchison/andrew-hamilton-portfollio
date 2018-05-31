@@ -14,9 +14,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::with('thumbnailImage')->get()->chunk(3);
+        $projects = Project::get()->chunk(3);
 
-        return view('projects.index', compact($projects));
+        return view('projects.index', compact('projects'));
     }
 
     /**

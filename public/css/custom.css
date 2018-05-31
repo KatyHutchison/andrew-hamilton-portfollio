@@ -28,3 +28,12 @@ header h2 {
     color: slategrey;
     font-weight: normal;
 }
+
+.thumbnail-height {
+    height: auto;
+}
+
+body .thumbnail-height:hover {
+    transition: all 200ms ease-out;
+    transform: scale(1.01);
+}

@@ -8,11 +8,11 @@ class Project extends Model
 {
     public function thumbnailImage()
     {
-        $this->hasOne(ThumbnailImage::class);
+       return $this->hasOne(ThumbnailImage::class);
     }
 
     public function galleryImages()
     {
-        $this->hasMany(GalleryImage::class);
+       return $this->hasMany(GalleryImage::class);
     }
 }
