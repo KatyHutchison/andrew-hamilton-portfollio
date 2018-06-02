@@ -15,3 +15,4 @@ Route::get('/', 'ProjectController@index');
 Route::post('/contact', 'ContactController@processContact');
 Route::get('/contact', 'ContactController@create');
 Route::get('/project/{project}', 'ProjectController@show');
+Route::get('/about', 'AboutController@show');
