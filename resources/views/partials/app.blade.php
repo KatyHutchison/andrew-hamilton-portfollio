@@ -9,7 +9,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="/css/normalize.css">
@@ -22,10 +22,10 @@
 
 <script src="js/bootstrap.min.js"></script>
 <body>
-<div class="container">
-    @include("partials.header")
-    @yield("content")
-    @include("partials.footer")
+    <div class="container">
+        @include("partials.header")
+        @yield("content")
+        @include("partials.footer")
     <div>
 </body>
 </html>

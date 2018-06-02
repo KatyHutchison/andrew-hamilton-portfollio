@@ -1,13 +1,15 @@
 <header>
-    <div class="row nav-top">
+    <div class="row nav-top">   
         <div class="col-md-5">
-            <h1>ANDREW HAMILTON</h1>
-            <h2>FURNITURE AND PRODUCT DESIGN</h2>
+            <a href="/">
+                <h1>ANDREW HAMILTON</h1>
+                <h2>FURNITURE AND PRODUCT DESIGN</h2>
+            </a>
         </div>
-
+    
         <nav>
             <a href="/">WORK</a>
-            <a href="/">ABOUT</a>
+            <a href="/about">ABOUT</a>
             <a href="/">CONTACT</a>
         </nav>
     </div>
