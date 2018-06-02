@@ -2,40 +2,22 @@
 
 @section('content')
     <div class="pt-4">
-        @foreach($projects as $project)
+        @foreach($projects as $projectBatch)
             <div class="row pb-3 ">
-                @if ($project->slice(0,1)->first())
-                    <div class="col-md-4 thumbnail-height">
-                        <a href="/project/{{$project->slice(0,1)->first()->id}}">
-                            <img class="img-fluid" src={{ asset($project->slice(0,1)->first()->thumbnailImage->path) }} alt="">
-                        </a>
-                        <div class="text-center pt-2">
-                            {{ $project->slice(0,1)->first()->thumbnailImage->label }}
+                @foreach($projectBatch as $project)
+                    @if ($project)
+                        <div class="col-md-4 thumbnail-height">
+                            <a href="/project/{{$project->id}}">
+                                <img class="img-fluid"
+                                     src={{ asset($project->thumbnailImage->path) }} alt="">
+                            </a>
+                            <div class="text-center pt-2">
+                                {{ $project->thumbnailImage->label }}
+                            </div>
                         </div>
-                    </div>
-                @endif
-                @if ($project->slice(1,1)->first())
-                    <div class="col-md-4 thumbnail-height">
-                        <a href="/project/{{$project->slice(1,1)->first()->id}}">
-                            <img class="img-fluid" src={{ asset($project->slice(1,1)->first()->thumbnailImage->path) }} alt="">
-                        </a>
-                        <div class="text-center pt-2">
-                            {{ $project->slice(0,1)->first()->thumbnailImage->label }}
-                        </div>
-                    </div>
-                @endif
-                @if ($project->slice(2,1)->first())
-                    <div class="col-md-4 thumbnail-height">
-                        <a href="/project/{{$project->slice(2,1)->first()->id}}">
-                            <img class="img-fluid" src={{ asset($project->slice(2,1)->first()->thumbnailImage->path) }} alt="">
-                        </a>
-                        <div class="text-center pt-2">
-                            {{ $project->slice(0,1)->first()->thumbnailImage->label }}
-                        </div>
-                    </div>
-                @endif
+                    @endif
+                @endforeach
             </div>
         @endforeach
-
     </div>
 @endsection
