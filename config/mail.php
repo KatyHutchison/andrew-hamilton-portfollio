@@ -120,4 +120,6 @@ return [
         ],
     ],
 
+    'siteOwnerEmail' => env('SITE_OWNER_EMAIL')
+
 ];

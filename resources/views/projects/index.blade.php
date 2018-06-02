@@ -1,7 +1,7 @@
 @extends("partials.app")
 
 @section('content')
-    <div class="pt-4">
+    <div class="index-top">
         @foreach($projects as $projectBatch)
             <div class="row pb-3 ">
                 @foreach($projectBatch as $project)
