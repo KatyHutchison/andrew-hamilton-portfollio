@@ -19,13 +19,27 @@
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 </head>
-
-<script src="js/bootstrap.min.js"></script>
 <body>
-    <div class="container">
-        @include("partials.header")
-        @yield("content")
-        @include("partials.footer")
-    <div>
+<div class="container">
+    @include("partials.header")
+    @yield("content")
+    @include("partials.footer")
+</div>
 </body>
+
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+<script
+        src="/js/bootstrap.js"></script>
+
+<script>
+    $('.carousel').carousel({
+        interval: false
+    });
+</script>
+
 </html>

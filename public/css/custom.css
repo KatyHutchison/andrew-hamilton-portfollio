@@ -78,3 +78,19 @@ footer {
     font-size: 1.0em;
     color: darkslategray;
 }
+
+.project-body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9em;
+    text-align: justify;
+    padding-top: 20px;
+    color: slategray;
+}
+
+.project-heading {
+    color: slategray;
+}
+
+footer {
+    padding-top: 50px;
+}
