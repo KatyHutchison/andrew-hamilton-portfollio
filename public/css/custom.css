@@ -26,6 +26,12 @@ nav a {
     color: slategrey;
     text-decoration: none;
     letter-spacing: 2px;
+
+
+}
+
+nav {
+    display: unset !important;
 }
 
 header {
