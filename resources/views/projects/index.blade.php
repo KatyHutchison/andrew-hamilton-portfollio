@@ -3,7 +3,7 @@
 @section('content')
     <div class="index-top">
         @foreach($projects as $projectBatch)
-            <div class="row pb-3 ">
+            <div class="row pb-5 ">
                 @foreach($projectBatch as $project)
                     @if ($project)
                         <div class="col-md-4 thumbnail-height">
@@ -11,9 +11,6 @@
                                 <img class="img-fluid"
                                      src={{ $project->thumbnailImage->path }} alt="">
                             </a>
-                            <div class="text-center pt-2">
-                                {{ $project->thumbnailImage->label }}
-                            </div>
                         </div>
                     @endif
                 @endforeach

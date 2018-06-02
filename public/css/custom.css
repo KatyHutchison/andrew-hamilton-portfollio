@@ -7,15 +7,24 @@ body {
     padding-top: 30px;
 }
 
+header h1 {
+    letter-spacing: 3px;
+}
+
+header h2 {
+    letter-spacing: 3px;
+}
+
 nav a {
     padding-left: 12px;
     padding-right: 12px;
     color: slategrey;
     text-decoration: none;
+    letter-spacing: 2px;
 }
 
 header {
-    padding-top: 40px;
+    padding-top: 50px;
     color: darkslategrey;
     font-weight: normal;
 }
@@ -44,5 +53,16 @@ footer {
 }
 
 .index-top {
-    padding-top: 60px;
+    padding-top: 70px;
+}
+
+.font-awesome-icon {
+    font-size: 4em;
+    color: slategrey;
+    text-align: center;
+    text-decoration: none;
+}
+
+.font-awesome-icon a {
+    color: inherit;
 }
