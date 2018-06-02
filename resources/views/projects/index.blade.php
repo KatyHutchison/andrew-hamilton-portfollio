@@ -9,7 +9,7 @@
                         <div class="col-md-4 thumbnail-height">
                             <a href="/project/{{$project->id}}">
                                 <img class="img-fluid"
-                                     src={{ asset($project->thumbnailImage->path) }} alt="">
+                                     src={{ $project->thumbnailImage->path }} alt="">
                             </a>
                             <div class="text-center pt-2">
                                 {{ $project->thumbnailImage->label }}
