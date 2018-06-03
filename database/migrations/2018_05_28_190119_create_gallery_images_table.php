@@ -17,6 +17,7 @@ class CreateGalleryImagesTable extends Migration
             $table->increments('id');
             $table->string('path');
             $table->unsignedInteger('project_id');
+            $table->string('alt_tag')->nullable();
             $table->timestamps();
         });
     }

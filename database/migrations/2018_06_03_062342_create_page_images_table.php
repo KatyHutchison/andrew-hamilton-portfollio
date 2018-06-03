@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateThumbnailImagesTable extends Migration
+class CreatePageImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,17 @@ class CreateThumbnailImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('thumbnail_images', function (Blueprint $table) {
+        Schema::create('page_images', function (Blueprint $table) {
             $table->increments('id');
             $table->string('path');
-            $table->unsignedInteger('project_id');
             $table->string('label');
+            $table->unsignedInteger('page_id');
             $table->string('alt_tag')->nullable();
             $table->timestamps();
+        });
+
+        Schema::table('page_images', function (Blueprint $table) {
+           $table->foreign('page_id')->references('id')->on('pages');
         });
     }
 
@@ -30,6 +34,6 @@ class CreateThumbnailImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('thumbnail_images');
+        Schema::dropIfExists('page_images');
     }
 }

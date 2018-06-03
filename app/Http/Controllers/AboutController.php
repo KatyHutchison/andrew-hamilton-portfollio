@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Page;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    public function show () {
-        return view('about.show');
+    public function about () {
+
+        $page = Page::where('label', 'about')->first();
+
+        $pageData = collect([
+            'headerImage' => $page->images->first(),
+            'mainText' => $page->texts->first(),
+        ]);
+
+        return view('about.about-page', compact(['page', 'pageData']));
     }
 }

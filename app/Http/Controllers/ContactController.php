@@ -9,7 +9,7 @@ class ContactController extends Controller
 {
     public function create()
     {
-        return redirect('/');
+        return view('contact.contact-form');
     }
 
     public function processContact(Request $request)
