@@ -33,13 +33,10 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 
-<script
-        src="/js/bootstrap.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/custom.js"></script>
 
-<script>
-    $('.carousel').carousel({
-        interval: false
-    });
-</script>
+
+
 
 </html>

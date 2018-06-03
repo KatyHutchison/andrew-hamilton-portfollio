@@ -22,6 +22,9 @@ class ContactController extends Controller
         $message = $request->message;
 
         Mail::to(config('mail.contact_email'))->send(new Contact($name, $email, $message));
+        flash("Thanks <strong>$name</strong>, your message is on it's way! I'll be in touch soon.")->success();
+
+        return redirect('/contact');
     }
 
     private function validateData(Request $request)

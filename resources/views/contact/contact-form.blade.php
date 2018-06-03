@@ -12,6 +12,8 @@
                 </div>
             @endif
 
+            @include('flash::message')
+
             <form action="/contact" method="POST">
                 {{ csrf_field() }}
                 <div class="form-group justify-content-end">
@@ -37,4 +39,5 @@
             </form>
         </div>
     </div>
+
 @endsection
