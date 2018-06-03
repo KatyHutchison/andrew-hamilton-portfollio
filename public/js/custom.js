@@ -4,4 +4,4 @@ $('.carousel').carousel({
 });
 
 // removes flashed success image when email has been sent
-$('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+$('div.alert').not('.alert-important').delay(3000).fadeOut(450);
