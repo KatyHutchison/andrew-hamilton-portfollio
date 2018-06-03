@@ -1,5 +1,5 @@
 /* mobile specific css */
-@media (max-width: 480px) {
+@media (max-width: 770px) {
     #navbarToggler {
         padding-top: 20px;
     }
@@ -14,7 +14,7 @@
 }
 
 /* tablet specific css */
-@media (max-width: 770px) {
+@media (max-width: 984px) {
     #navbarToggler {
         padding-top: 20px;
     }
