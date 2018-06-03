@@ -6,7 +6,7 @@
             <div class="row pb-5">
                 @foreach($projectBatch as $project)
                     @if ($project)
-                        <div class="col-md-4 thumbnail-height">
+                        <div class="col-md-4 project-thumbnail">
                             <a href="/project/{{$project->id}}">
                                 <img class="img-fluid"
                                      src={{ $project->thumbnailImage->path }} alt="">
