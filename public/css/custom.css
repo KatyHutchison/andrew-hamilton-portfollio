@@ -1,3 +1,4 @@
+/* mobile specific css */
 @media (max-width: 480px) {
     #navbarToggler {
         padding-top: 20px;
@@ -5,6 +6,17 @@
 
     .project-thumbnail {
         padding-bottom: 10px;
+    }
+
+    .project-heading {
+        padding-top: 20px;
+    }
+}
+
+/* tablet specific css */
+@media (max-width: 770px) {
+    #navbarToggler {
+        padding-top: 20px;
     }
 }
 
