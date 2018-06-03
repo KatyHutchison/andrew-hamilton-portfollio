@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -12,8 +13,23 @@ class ContactController extends Controller
         return view('contact.contact-form');
     }
 
-    public function processContact(Request $request)
+    public function processMessage(Request $request)
     {
-        Mail::to(config('mail.siteOwnerEmail'))->send(new Contact());
+        $this->validateData($request);
+
+        $name = $request->name;
+        $email = $request->email;
+        $message = $request->message;
+
+        Mail::to(config('mail.contact_email'))->send(new Contact($name, $email, $message));
+    }
+
+    private function validateData(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'message' => 'required',
+        ]);
     }
 }

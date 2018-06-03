@@ -120,6 +120,6 @@ return [
         ],
     ],
 
-    'siteOwnerEmail' => env('SITE_OWNER_EMAIL')
+    'contact_email' => env('CONTACT_EMAIL')
 
 ];

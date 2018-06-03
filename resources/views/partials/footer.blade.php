@@ -4,6 +4,6 @@
         <a href={{ $socialMedia->get('Linked In')->url }}><i class="fab fa-linkedin-in"></i></a>
     </div>
     <div class="text-center">
-        SITE BY KATY HUTCHISON
+        SITE BY K&A HUTCHISON
     </div>
 </footer>

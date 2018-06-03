@@ -9,16 +9,22 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 class Contact extends Mailable
 {
-    use Queueable, SerializesModels;
+    use SerializesModels;
+
+    public $name;
+    public $email;
+    public $body;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($name, $email, $message)
     {
-        //
+        $this->name = $name;
+        $this->email = $email;
+        $this->body = $message;
     }
 
     /**
@@ -28,6 +34,7 @@ class Contact extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->from('contact@andrewhamiltondesign.co.uk')
+            ->view('emails.contact');
     }
 }

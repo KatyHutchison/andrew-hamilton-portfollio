@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'ProjectController@index');
-Route::post('/contact', 'ContactController@processContact');
+Route::post('/contact', 'ContactController@processMessage');
 Route::get('/contact', 'ContactController@create');
 Route::get('/project/{project}', 'ProjectController@show');
 Route::get('/about', 'AboutController@about');
