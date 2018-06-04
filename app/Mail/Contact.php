@@ -35,6 +35,6 @@ class Contact extends Mailable
     public function build()
     {
         return $this->from('contact@andrewhamiltondesign.co.uk')
-            ->view('emails.contact');
+            ->markdown('emails.contact');
     }
 }
