@@ -77,8 +77,8 @@ header h2 {
     height: auto;
 }
 
-body .thumbnail-height:hover {
-    transition: all 100ms ease-out;
+body .project-thumbnail:hover {
+    transition: all 200ms ease-out;
     transform: scale(1.01);
 }
 
