@@ -105,6 +105,7 @@ footer {
     font-family: 'Open Sans', 'sans-serif';
     font-size: 1.0em;
     color: darkslategray;
+    text-align: justify;
 }
 
 .project-body {
