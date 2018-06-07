@@ -34,7 +34,7 @@
             <div class="project-heading">
                 <h3>{{ $project->heading }}</h3>
             </div>
-            <div class="project-body">
+            <div class="project-text">
                 {!! $project->body !!}
             </div>
         </div>
