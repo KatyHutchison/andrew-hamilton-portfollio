@@ -6,7 +6,6 @@
                 <h2>FURNITURE AND PRODUCT DESIGN</h2>
             </a>
         </div>
-
         @include('partials.nav')
     </div>
 </header>

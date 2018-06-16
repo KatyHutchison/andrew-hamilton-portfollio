@@ -47,7 +47,4 @@
 <script src="/js/bootstrap.js"></script>
 <script src="/js/custom.js"></script>
 
-
-
-
 </html>
