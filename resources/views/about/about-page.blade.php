@@ -4,7 +4,7 @@
 <div class="container">
 
     <div class="row">
-        <img src={{ $pageData->get('headerImage')->path }} alt="" class="img-fluid">
+        <img src={{ Storage::url($pageData->get('headerImage')->path) }} alt="" class="img-fluid">
     </div>
     
     <div class="row about-text">

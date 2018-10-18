@@ -9,7 +9,7 @@ class AboutController extends Controller
 {
     public function about () {
 
-        $page = Page::where('label', 'about')->first();
+        $page = Page::where('label', 'about')->with(['images', 'texts'])->first();
 
         $pageData = collect([
             'headerImage' => $page->images->first(),
