@@ -23,7 +23,7 @@ class Page extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'slug';
 
 
     public static $group = "Pages";
