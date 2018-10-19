@@ -9,7 +9,7 @@
                         <div class="col-md-4 project-thumbnail">
                             <a href="/project/{{$project->id}}">
                                 <img class="img-fluid"
-                                     src={{ $project->thumbnailImage->path }} alt="">
+                                     src={{ Storage::url($project->thumbnailImage->path) }} alt="">
                             </a>
                         </div>
                     @endif

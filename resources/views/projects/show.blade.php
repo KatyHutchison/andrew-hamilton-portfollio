@@ -6,12 +6,12 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="d-block img-fluid" src={{ $project->galleryImages->first()->path }}
+                        <img class="d-block img-fluid" src={{ Storage::url($project->galleryImages->first()->path) }}
                                 alt="First slide">
                     </div>
                     @foreach($project->galleryImages->slice(1)->all() as $image)
                         <div class="carousel-item">
-                            <img class="d-block img-fluid" src={{ $image->path }}
+                            <img class="d-block img-fluid" src={{ Storage::url($image->path) }}
                                     alt="First slide">
                         </div>
                     @endforeach
