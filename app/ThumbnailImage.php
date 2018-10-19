@@ -8,6 +8,6 @@ class ThumbnailImage extends Model
 {
     public function Project()
     {
-        $this->belongsTo(Project::class);
+        return $this->belongsTo(Project::class);
     }
 }

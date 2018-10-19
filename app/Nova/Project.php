@@ -2,34 +2,32 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use phpDocumentor\Reflection\Types\Parent_;
 
-class PageImage extends Resource
+class Project extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\PageImage';
+    public static $model = 'App\Project';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'label';
+    public static $title = 'heading';
 
-
-    public static $group = "Pages";
-
+    public static $group = "Projects";
 
     /**
      * The columns that should be searched.
@@ -37,16 +35,8 @@ class PageImage extends Resource
      * @var array
      */
     public static $search = [
-        'label',
+        'id',
     ];
-
-    public $pageLabel;
-
-    public function __construct(\Illuminate\Database\Eloquent\Model $resource)
-    {
-        parent::__construct($resource);
-        $this->pageLabel = $this->model()->page ? $this->model()->page->label : null;
-    }
 
     /**
      * Get the fields displayed by the resource.
@@ -58,13 +48,12 @@ class PageImage extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('label'),
-            Image::make('Image', 'path')->disk('public')->path('images/' . $this->pageLabel . '/' . $this->pageLabel . 'jpg'),
-            Text::make('alt tag'),
+            Text::make('heading'),
+            Trix::make('body')->hideFromIndex(),
             DateTime::make('created', 'created_at')->hideFromIndex(),
             DateTime::make('last updated', 'updated_at')->hideFromIndex(),
-            BelongsTo::make('Page'),
-
+            HasOne::make('Thumbnail Image', 'thumbnailImage'),
+            HasMany::make('Gallery Images', 'galleryImages'),
         ];
     }
 
@@ -110,10 +99,5 @@ class PageImage extends Resource
     public function actions(Request $request)
     {
         return [];
-    }
-
-    public static function label()
-    {
-        return 'Page Images';
     }
 }

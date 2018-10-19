@@ -3,33 +3,29 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use phpDocumentor\Reflection\Types\Parent_;
 
-class PageImage extends Resource
+class ThumbnailImage extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\PageImage';
+    public static $model = 'App\ThumbnailImage';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'label';
+    public static $title = 'id';
 
-
-    public static $group = "Pages";
-
+    public static $group = 'Projects';
 
     /**
      * The columns that should be searched.
@@ -37,33 +33,25 @@ class PageImage extends Resource
      * @var array
      */
     public static $search = [
-        'label',
+        'id',
     ];
-
-    public $pageLabel;
-
-    public function __construct(\Illuminate\Database\Eloquent\Model $resource)
-    {
-        parent::__construct($resource);
-        $this->pageLabel = $this->model()->page ? $this->model()->page->label : null;
-    }
 
     /**
      * Get the fields displayed by the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function fields(Request $request)
     {
+        $projectId = $this->model() ? $this->model()->project_id : null;
+
         return [
             ID::make()->sortable(),
             Text::make('label'),
-            Image::make('Image', 'path')->disk('public')->path('images/' . $this->pageLabel . '/' . $this->pageLabel . 'jpg'),
-            Text::make('alt tag'),
-            DateTime::make('created', 'created_at')->hideFromIndex(),
-            DateTime::make('last updated', 'updated_at')->hideFromIndex(),
-            BelongsTo::make('Page'),
+            Image::make('Image', 'path')->disk('public')->path('images/projects/' . $projectId . '/thumbnail/thumbnail.jpg'),
+            BelongsTo::make('Project', 'project'),
 
         ];
     }
@@ -71,7 +59,8 @@ class PageImage extends Resource
     /**
      * Get the cards available for the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function cards(Request $request)
@@ -82,7 +71,8 @@ class PageImage extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function filters(Request $request)
@@ -93,7 +83,8 @@ class PageImage extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function lenses(Request $request)
@@ -104,7 +95,8 @@ class PageImage extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function actions(Request $request)
@@ -114,6 +106,6 @@ class PageImage extends Resource
 
     public static function label()
     {
-        return 'Page Images';
+        return 'Thumbnail Images';
     }
 }
