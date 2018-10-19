@@ -50,8 +50,8 @@ class PageText extends Resource
             ID::make()->sortable(),
             Text::make('label'),
             Trix::make('body','text')->hideFromIndex(),
-            DateTime::make('created', 'created_at'),
-            DateTime::make('last updated', 'updated_at'),
+            DateTime::make('created', 'created_at')->onlyOnDetail(),
+            DateTime::make('last updated', 'updated_at')->onlyOnDetail(),
             BelongsTo::make('Page'),
         ];
     }

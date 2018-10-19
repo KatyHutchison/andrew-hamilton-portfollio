@@ -51,7 +51,7 @@ class ThumbnailImage extends Resource
         return [
             ID::make()->sortable(),
             Text::make('label'),
-            ImageCropper::make('Image', 'path')->disk('public')->path('images/projects/' . $projectId . '/thumbnail/thumbnail.jpg'),
+            ImageCropper::make('Image', 'path')->disk('public')->path('images/projects/' . $projectId . '/thumbnail/'),
             BelongsTo::make('Project', 'project'),
 
         ];

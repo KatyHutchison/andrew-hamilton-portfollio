@@ -60,10 +60,10 @@ class PageImage extends Resource
         return [
             ID::make()->sortable(),
             Text::make('label'),
-            ImageCropper::make('Image', 'path')->disk('public')->path('images/' . $this->pageLabel . '/' . $this->pageLabel . 'jpg'),
+            ImageCropper::make('Image', 'path')->disk('public')->path('images/' . $this->pageLabel),
             Text::make('alt tag'),
-            DateTime::make('created', 'created_at')->hideFromIndex(),
-            DateTime::make('last updated', 'updated_at')->hideFromIndex(),
+            DateTime::make('created', 'created_at')->onlyOnDetail(),
+            DateTime::make('last updated', 'updated_at')->onlyOnDetail(),
             BelongsTo::make('Page'),
 
         ];

@@ -40,23 +40,27 @@ class GalleryImage extends Resource
     /**
      * Get the fields displayed by the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function fields(Request $request)
     {
+        $projectId = $this->model() ? $this->model()->project_id : null;
+
         return [
             ID::make()->sortable(),
             BelongsTo::make('project'),
-            ImageCropper::make('image', 'path'),
-            Text::make('alt tag'),
+            ImageCropper::make('image', 'path')->disk('public')->path('images/projects/' . $projectId . '/gallery')->rules(['required']),
+            Text::make('alt tag')->rules(['string']),
         ];
     }
 
     /**
      * Get the cards available for the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function cards(Request $request)
@@ -67,7 +71,8 @@ class GalleryImage extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function filters(Request $request)
@@ -78,7 +83,8 @@ class GalleryImage extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function lenses(Request $request)
@@ -89,7 +95,8 @@ class GalleryImage extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function actions(Request $request)

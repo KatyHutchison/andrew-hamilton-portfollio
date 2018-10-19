@@ -50,8 +50,8 @@ class Project extends Resource
             ID::make()->sortable(),
             Text::make('heading'),
             Trix::make('body')->hideFromIndex(),
-            DateTime::make('created', 'created_at')->hideFromIndex(),
-            DateTime::make('last updated', 'updated_at')->hideFromIndex(),
+            DateTime::make('created', 'created_at')->onlyOnDetail(),
+            DateTime::make('last updated', 'updated_at')->onlyOnDetail(),
             HasOne::make('Thumbnail Image', 'thumbnailImage'),
             HasMany::make('Gallery Images', 'galleryImages'),
         ];

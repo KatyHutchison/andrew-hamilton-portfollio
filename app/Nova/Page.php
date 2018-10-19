@@ -51,8 +51,8 @@ class Page extends Resource
             Text::make('label'),
             Text::make('slug'),
             Text::make('uri')->hideFromIndex(),
-            DateTime::make('Created', 'created_at')->hideFromIndex(),
-            DateTime::make('Last Updated', 'updated_at')->hideFromIndex(),
+            DateTime::make('Created', 'created_at')->onlyOnDetail(),
+            DateTime::make('Last Updated', 'updated_at')->onlyOnDetail(),
             HasMany::make('Page Texts', 'texts'),
             HasMany::make('Page Images', 'images'),
 
