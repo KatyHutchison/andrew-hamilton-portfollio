@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use R64\NovaImageCropper\ImageCropper;
 
 class GalleryImage extends Resource
 {
@@ -47,7 +48,7 @@ class GalleryImage extends Resource
         return [
             ID::make()->sortable(),
             BelongsTo::make('project'),
-            Image::make('image', 'path'),
+            ImageCropper::make('image', 'path'),
             Text::make('alt tag'),
         ];
     }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "694920b379f2a706d7187d831f249f88",
+    "content-hash": "22bcf4e8d767ecd273f5ff5535d7898c",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -1405,6 +1405,47 @@
                 "shell"
             ],
             "time": "2018-10-13T15:16:03+00:00"
+        },
+        {
+            "name": "r64/nova-image-cropper",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/64robots/nova-image-cropper.git",
+                "reference": "e3dde6c9feb54470e2d8f8116d3d93897207ac34"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/64robots/nova-image-cropper/zipball/e3dde6c9feb54470e2d8f8116d3d93897207ac34",
+                "reference": "e3dde6c9feb54470e2d8f8116d3d93897207ac34",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "R64\\NovaImageCropper\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "R64\\NovaImageCropper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "time": "2018-09-02T09:15:41+00:00"
         },
         {
             "name": "ramsey/uuid",
