@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use R64\NovaImageCropper\ImageCropper;
 
 class ThumbnailImage extends Resource
 {
@@ -51,7 +50,7 @@ class ThumbnailImage extends Resource
         return [
             ID::make()->sortable(),
             Text::make('label'),
-            ImageCropper::make('Image', 'path')->disk('public')->path('images/projects/' . $projectId . '/thumbnail/'),
+            Image::make('Image', 'path')->disk('public')->path('images/projects/' . $projectId . '/thumbnail/'),
             BelongsTo::make('Project', 'project'),
 
         ];

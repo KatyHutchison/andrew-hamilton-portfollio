@@ -9,8 +9,6 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use phpDocumentor\Reflection\Types\Parent_;
-use R64\NovaImageCropper\ImageCropper;
 
 class PageImage extends Resource
 {
@@ -60,7 +58,7 @@ class PageImage extends Resource
         return [
             ID::make()->sortable(),
             Text::make('label'),
-            ImageCropper::make('Image', 'path')->disk('public')->path('images/' . $this->pageLabel),
+            Image::make('Image', 'path')->disk('public')->path('images/' . $this->pageLabel),
             Text::make('alt tag'),
             DateTime::make('created', 'created_at')->onlyOnDetail(),
             DateTime::make('last updated', 'updated_at')->onlyOnDetail(),
